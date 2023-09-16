@@ -527,34 +527,31 @@
 }
 
 /********************* breadcrumb *********************/
-.breadcrumb-section {
-  background-color: $white;
-  padding: 14px 0;
+.breadcrumb-con{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  // margin-bottom: 25px;
+  
 
-  .breadcrumb-m {
+  .breadcrumb-m{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 14px;
-    font-size: 14px;
+    font-size: 17px;
+    color: $white;
+    
+    i{
+      font-size: 15px;
+      color: $white;
 
-    .breadcrumb-m-link {
-      color: $main;
-
-      &.active {
-        color: $black;
-      }
-    }
-
-    i {
-      color: $black;
-
-      #{$ltr} & {
-        transform: rotateY(-180deg);
+      #{$ltr} &{
+        transform: rotate(-180deg);
       }
     }
   }
 }
+
 
 /********************* iti__selected-flag *************/
 .iti {

@@ -789,28 +789,24 @@ html[lang=ar] .steps .step-item + .step-item:after {
 }
 
 /********************* breadcrumb *********************/
-.breadcrumb-section {
-  background-color: #fff;
-  padding: 14px 0;
+.breadcrumb-con {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
-.breadcrumb-section .breadcrumb-m {
+.breadcrumb-con .breadcrumb-m {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 14px;
-  font-size: 14px;
+  font-size: 17px;
+  color: #fff;
 }
-.breadcrumb-section .breadcrumb-m .breadcrumb-m-link {
-  color: #ef3a00;
+.breadcrumb-con .breadcrumb-m i {
+  font-size: 15px;
+  color: #fff;
 }
-.breadcrumb-section .breadcrumb-m .breadcrumb-m-link.active {
-  color: #202020;
-}
-.breadcrumb-section .breadcrumb-m i {
-  color: #202020;
-}
-html[lang=en] .breadcrumb-section .breadcrumb-m i {
-  transform: rotateY(-180deg);
+html[lang=en] .breadcrumb-con .breadcrumb-m i {
+  transform: rotate(-180deg);
 }
 
 /********************* iti__selected-flag *************/
@@ -2899,6 +2895,7 @@ html[lang=ar] .pagination .page-item:last-child .page-link {
   z-index: 2000;
   overflow-x: hidden;
   overflow-y: clip;
+  padding-bottom: 40px;
 }
 .page-header .header-content {
   padding: 12px 0;
@@ -3564,6 +3561,10 @@ html[lang=ar] .about-content .about-img::after {
   padding-bottom: 100px;
 }
 
+.services-card {
+  counter-increment: post-counter;
+  overflow: hidden;
+}
 .services-card .service-img {
   height: 260px;
 }
@@ -3609,7 +3610,6 @@ html[lang=ar] .about-content .about-img::after {
   top: 50%;
   transform: translate(-50%, -50%);
   font-size: 30px;
-  counter-increment: post-counter;
   content: "0" counter(post-counter);
   font-weight: 800;
   line-height: 1;
@@ -3904,5 +3904,121 @@ html[lang=ar] .team-card .team-content::before {
 }
 
 /********************* End client-item section *********************/
+/********************* Start page-header section *********************/
+.page-top {
+  position: relative;
+  z-index: 2;
+}
+.page-top::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 55, 49, 0.7098039216);
+  z-index: -1;
+}
+.page-top .section-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  object-fit: cover;
+}
+.page-top .page-info {
+  padding: 200px 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media screen and (max-width: 425px) {
+  .page-top .page-info {
+    padding-top: 185px;
+    padding-bottom: 35px;
+  }
+}
+.page-top .page-info .page-head {
+  font-size: 30px;
+  color: #fff;
+}
+@media screen and (max-width: 425px) {
+  .page-top .page-info .page-head {
+    font-size: 22px;
+  }
+}
+
+/********************* End page-header section *********************/
+/********************* Start gallary section *********************/
+.gallary {
+  gap: 30px;
+}
+@media screen and (max-width: 425px) {
+  .gallary {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 15px;
+  }
+}
+.gallary .gallary-item {
+  height: 280px;
+  position: relative;
+}
+@media screen and (max-width: 425px) {
+  .gallary .gallary-item {
+    height: 195px;
+  }
+}
+.gallary .gallary-item::after {
+  position: absolute;
+  content: "";
+  z-index: 2;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+}
+.gallary .gallary-item .fancybox-img {
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  bottom: 20px;
+  z-index: 3;
+  opacity: 0;
+}
+html[lang=en] .gallary .gallary-item .fancybox-img {
+  left: 15px;
+}
+html[lang=ar] .gallary .gallary-item .fancybox-img {
+  right: 15px;
+}
+.gallary .gallary-item .gallary-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gallary .gallary-item:hover::after {
+  opacity: 1;
+}
+.gallary .gallary-item:hover .fancybox-img {
+  opacity: 1;
+}
+
+/********************* End gallary section *********************/
 
 /*# sourceMappingURL=main.css.map */

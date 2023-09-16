@@ -1,29 +1,6 @@
 @import "sass/variables", "sass/mixins", "sass/global", "sass/components",
   "sass/navbar", "sass/footer";
 
-// .main-content {
-//   position: relative;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-
-//   &::after {
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     content: "";
-//     background-color: rgba($color: #000000, $alpha: 0.5);
-//   }
-
-//   // img{
-//   //     width: 100%;
-//   //     height: 100vh;
-//   //     min-height: 700px;
-//   //     object-fit: cover;
-//   // }
-// }
 /********************* Start Slider section *********************/
 
 .home-sec {
@@ -195,14 +172,14 @@
     border: 5px solid $white;
 
     @media screen and (max-width: $screen-xs) {
-        width: 325px;
-        height: 380px;
-      }
+      width: 325px;
+      height: 380px;
+    }
 
     @media screen and (max-width: $screen-xxs) {
-        width: 290px;
-        height: 340px;
-      }
+      width: 290px;
+      height: 340px;
+    }
 
     &::after {
       content: "";
@@ -293,7 +270,8 @@
 }
 
 .services-card {
-  // counter-increment: post-counter;
+  counter-increment: post-counter;
+  overflow: hidden;
 
   .service-img {
     height: 260px;
@@ -342,7 +320,6 @@
         top: 50%;
         transform: translate(-50%, -50%);
         font-size: 30px;
-        counter-increment: post-counter;
         content: "0" counter(post-counter);
         font-weight: 800;
         line-height: 1;
@@ -649,3 +626,118 @@
   }
 }
 /********************* End client-item section *********************/
+
+/********************* Start page-header section *********************/
+
+.page-top {
+  position: relative;
+  z-index: 2;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #003731b5;
+    z-index: -1;
+  }
+
+  .section-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    object-fit: cover;
+  }
+
+  .page-info {
+    padding: 200px 0 50px;
+    @include between;
+
+    @media screen and (max-width: $screen-xs) {
+      padding-top: 185px;
+      padding-bottom: 35px;
+    }
+
+    .page-head {
+      font-size: 30px;
+      color: $white;
+
+      @media screen and (max-width: $screen-xs) {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+/********************* End page-header section *********************/
+
+/********************* Start gallary section *********************/
+.gallary {
+  gap: 30px;
+
+  @media screen and (max-width: $screen-xs) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 15px;
+  }
+
+  .gallary-item {
+    height: 280px;
+    position: relative;
+
+    @media screen and (max-width: $screen-xs) {
+      height: 195px;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      z-index: 2;
+      top: 0;
+      left: 0;
+      transition: $main-transition;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color: #000000, $alpha: 0.6);
+      opacity: 0;
+    }
+
+    .fancybox-img {
+      background-color: transparent;
+      border: 1px solid $white;
+      @include circle(40px);
+      @include center;
+      color: $white;
+      font-size: 15px;
+      cursor: pointer;
+      transition: all 0.5s ease-in-out;
+      position: absolute;
+      bottom: 20px;
+      @include dir-left(15px);
+      z-index: 3;
+      opacity: 0;
+    }
+
+    .gallary-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+
+      .fancybox-img {
+        opacity: 1;
+      }
+    }
+  }
+}
+/********************* End gallary section *********************/
