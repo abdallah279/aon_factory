@@ -72,6 +72,10 @@ body {
     height: 150px;
     background-image: url(../imgs/pattern1.png);
     z-index: 6;
+
+    @media screen and (max-width: $screen-xs) {
+      display: none;
+    }
   }
 }
 

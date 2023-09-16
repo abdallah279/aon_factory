@@ -111,6 +111,11 @@ html[lang=en] body::after {
 html[lang=ar] body::after {
   left: 0px;
 }
+@media screen and (max-width: 425px) {
+  body::after {
+    display: none;
+  }
+}
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -272,6 +277,12 @@ input:focus {
   background-size: 16px 16px;
   background-position: left top, left bottom, right top, right bottom;
   animation: rotate 1s linear infinite;
+}
+@media screen and (max-width: 425px) {
+  .loader-container .loader {
+    width: 60px;
+    height: 60px;
+  }
 }
 @keyframes rotate {
   0% {
@@ -2887,6 +2898,7 @@ html[lang=ar] .pagination .page-item:last-child .page-link {
   width: 100%;
   z-index: 2000;
   overflow-x: hidden;
+  overflow-y: clip;
 }
 .page-header .header-content {
   padding: 12px 0;
@@ -2921,7 +2933,6 @@ html[lang=ar] .pagination .page-item:last-child .page-link {
   transform: translateX(-50%);
 }
 .page-navbar .side-open {
-  display: none;
   font-size: 16px;
   cursor: pointer;
   color: #fff;
@@ -2931,6 +2942,7 @@ html[lang=ar] .pagination .page-item:last-child .page-link {
   align-items: center;
   width: 54px;
   height: 54px;
+  display: none;
 }
 @media screen and (max-width: 992px) {
   .page-navbar .side-open {

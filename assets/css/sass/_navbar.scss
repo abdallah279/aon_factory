@@ -5,6 +5,7 @@
   width: 100%;
   z-index: 2000;
   overflow-x: hidden;
+  overflow-y: clip;
 
   .header-content {
     padding: 12px 0;
@@ -42,7 +43,6 @@
   justify-content: space-between;
 
   .side-open {
-    display: none;
     font-size: 16px;
     cursor: pointer;
     color: $white;
@@ -50,6 +50,7 @@
     @include center;
     width: 54px;
     height: 54px;
+    display: none;
 
     @media screen and (max-width: $screen-lg) {
       display: flex;
