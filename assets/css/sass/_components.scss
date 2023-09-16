@@ -527,31 +527,29 @@
 }
 
 /********************* breadcrumb *********************/
-.breadcrumb-con{
+.breadcrumb-con {
   display: flex;
   align-items: center;
   gap: 8px;
   // margin-bottom: 25px;
-  
 
-  .breadcrumb-m{
+  .breadcrumb-m {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     font-size: 17px;
     color: $white;
-    
-    i{
+
+    i {
       font-size: 15px;
       color: $white;
 
-      #{$ltr} &{
+      #{$ltr} & {
         transform: rotate(-180deg);
       }
     }
   }
 }
-
 
 /********************* iti__selected-flag *************/
 .iti {
@@ -1274,15 +1272,15 @@
     width: 100%;
     min-height: 45px;
     border-radius: 8px;
-    padding: 0 12px;
     outline: none;
-    border: none;
-    font-size: 14px;
     color: $dark;
     transition: $main-transition;
-    border: 1px solid $main;
-    // background-color: $white;
-    box-shadow: $main-shadow;
+    background-color: #f8f8f8;
+    color: #101010;
+    border: 1px solid transparent;
+    border-radius: 0;
+    font-size: 15px;
+    padding: 13px 20px;
 
     @media screen and (max-width: $screen-xs) {
       min-height: 44px;
@@ -1298,12 +1296,12 @@
 
     &::placeholder {
       font-size: 14px;
-      color: $black;
+      color: #5f5858;
       transition: $main-transition;
     }
 
     &:focus {
-      border-color: $black;
+      border-color: $main;
 
       &::placeholder {
         opacity: 0;
