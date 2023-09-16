@@ -669,7 +669,7 @@
   }
 
   .page-info {
-    padding: 200px 0 50px;
+    padding: 220px 0 50px;
     @include between;
 
     @media screen and (max-width: $screen-xs) {
@@ -678,7 +678,7 @@
     }
 
     .page-head {
-      font-size: 30px;
+      font-size: 28px;
       color: $white;
 
       @media screen and (max-width: $screen-xs) {

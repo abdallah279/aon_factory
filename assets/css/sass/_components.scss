@@ -1451,13 +1451,15 @@
       min-height: 45px;
       display: flex;
       align-items: center;
-      border-radius: 8px;
-      // padding: 6px 0;
       outline: none;
       font-size: 14px;
-      color: $dark;
-      border: 1px solid $main;
-      box-shadow: $main-shadow;
+      color: $black;
+      background-color: #f8f8f8;
+      color: #101010;
+      border: 1px solid transparent;
+      border-radius: 0;
+      font-size: 15px;
+      padding: 13px 20px;
 
       @media (max-width: $screen-xs) {
         min-height: 44px;
@@ -1470,6 +1472,7 @@
         flex-wrap: wrap;
         gap: 8px;
         padding: 6px auto;
+        padding-right: 0;
       }
 
       .select2-selection__arrow {
@@ -1526,7 +1529,7 @@
 
 .select2-dropdown {
   z-index: 1100;
-  border-radius: 8px !important;
+  // border-radius: 8px !important;
   box-shadow: $main-shadow;
 }
 
@@ -1582,7 +1585,7 @@
 
 .select2-container--default {
   .select2-results__option--highlighted.select2-results__option--selectable {
-    background-color: transparent;
+    background-color: rgba($color: $main, $alpha: .1);
     color: $main;
     font-size: 15px;
     transition: $main-transition;

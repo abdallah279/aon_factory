@@ -1692,12 +1692,15 @@ html[lang=ar] .main-input.comment .sec-icon {
   min-height: 45px;
   display: flex;
   align-items: center;
-  border-radius: 8px;
   outline: none;
   font-size: 14px;
-  color: #060042;
-  border: 1px solid #ef3a00;
-  box-shadow: 0 0 5px 0 rgba(32, 32, 32, 0.1);
+  color: #202020;
+  background-color: #f8f8f8;
+  color: #101010;
+  border: 1px solid transparent;
+  border-radius: 0;
+  font-size: 15px;
+  padding: 13px 20px;
 }
 @media (max-width: 425px) {
   .select ~ .select2 .select2-selection--single,
@@ -1721,6 +1724,7 @@ html[lang=ar] .main-input.comment .sec-icon {
   flex-wrap: wrap;
   gap: 8px;
   padding: 6px auto;
+  padding-right: 0;
 }
 .select ~ .select2 .select2-selection--single .select2-selection__arrow,
 .select ~ .select2 .select2-selection--multiple .select2-selection__arrow,
@@ -1803,7 +1807,6 @@ html[lang=ar] .select-color ~ .select2 .select2-selection--multiple .select2-sel
 
 .select2-dropdown {
   z-index: 1100;
-  border-radius: 8px !important;
   box-shadow: 0 0 5px 0 rgba(32, 32, 32, 0.1);
 }
 
@@ -1858,7 +1861,7 @@ html[lang=ar] .select2-container--default .select2-selection--multiple .select2-
 }
 
 .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
-  background-color: transparent;
+  background-color: rgba(239, 58, 0, 0.1);
   color: #ef3a00;
   font-size: 15px;
   transition: all 0.3s ease;
@@ -3944,7 +3947,7 @@ html[lang=ar] .team-card .team-content::before {
   object-fit: cover;
 }
 .page-top .page-info {
-  padding: 200px 0 50px;
+  padding: 220px 0 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -3956,7 +3959,7 @@ html[lang=ar] .team-card .team-content::before {
   }
 }
 .page-top .page-info .page-head {
-  font-size: 30px;
+  font-size: 28px;
   color: #fff;
 }
 @media screen and (max-width: 425px) {
