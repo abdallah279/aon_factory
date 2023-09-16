@@ -153,6 +153,12 @@ textarea {
 i {
   line-height: initial;
 }
+html[lang=en] i.fa-arrow-left-long {
+  transform: scaleX(-1);
+}
+html[lang=en] i.fa-arrow-right-long {
+  transform: scaleX(-1);
+}
 
 p {
   color: #202020;
@@ -1000,7 +1006,7 @@ html[lang=ar] .iti--separate-dial-code .iti__flag-container {
   color: #fff;
 }
 .main-btn.sm {
-  min-width: 120px;
+  min-width: 80px;
   font-size: 14px;
   height: 44px;
 }
@@ -2584,7 +2590,7 @@ html[lang=ar] .modal-dialog .close-btn {
   transition: all 0.6s cubic-bezier(0.68, -0.3, 0.265, 2.1);
   box-shadow: 0 0 5px 0 rgba(32, 32, 32, 0.1);
   padding: 10px 8px;
-  border-radius: 15px;
+  border-radius: 0;
   min-width: 220px;
   transform: translate3d(0px, 0px, 0px);
   border: none;
@@ -2601,22 +2607,22 @@ html[lang=ar] .dropdown-menu {
   transform: translate3d(0px, 0px, 0px) !important;
 }
 html[lang=en] .dropdown-menu.show {
-  inset: 28px auto auto 0% !important;
+  inset: 50px auto auto 0% !important;
 }
 html[lang=ar] .dropdown-menu.show {
-  inset: 28px 0% auto auto !important;
+  inset: 50px 0% auto auto !important;
 }
 html[lang=en] .dropdown-menu.left {
-  inset: 50px 0% auto auto;
+  inset: 65px 0% auto auto;
 }
 html[lang=ar] .dropdown-menu.left {
-  inset: 50px auto auto 0%;
+  inset: 65px auto auto 0%;
 }
 html[lang=en] .dropdown-menu.left.show {
-  inset: 28px 0% auto auto !important;
+  inset: 50px 0% auto auto !important;
 }
 html[lang=ar] .dropdown-menu.left.show {
-  inset: 28px auto auto 0% !important;
+  inset: 50px auto auto 0% !important;
 }
 .dropdown-menu.drop-lang {
   min-width: 120px;
@@ -2627,11 +2633,11 @@ html[lang=ar] .dropdown-menu.left.show {
   font-size: 16px;
   color: #202020;
   transition: all 0.3s ease;
-  border-radius: 5px;
+  border-radius: 0;
 }
 .dropdown-menu.drop-lang .lang-item:hover {
-  color: #060042;
-  background-color: #FAFAFA;
+  color: #ef3a00;
+  background-color: #fef4f0;
 }
 html[lang=en] .dropdown-menu.drop-filter.show {
   inset: 45px 0% auto auto !important;
@@ -2659,7 +2665,6 @@ html[lang=ar] .dropdown-menu.drop-filter.show {
 }
 
 .dropdown-toggle {
-  background-color: transparent;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -3099,6 +3104,9 @@ html[lang=en] .page-navbar .links .link::after {
 }
 html[lang=ar] .page-navbar .links .link::after {
   right: 0;
+}
+html[lang=en] .page-navbar .links .link::after {
+  transform: skewX(7deg);
 }
 .page-navbar .links .link.active::after, .page-navbar .links .link:hover::after {
   opacity: 1;
@@ -3711,7 +3719,7 @@ html[lang=ar] .services-card .service-content svg {
 }
 .services-slider .owl-nav {
   position: absolute;
-  bottom: -38px;
+  bottom: -42px;
   display: flex;
   gap: 7px;
   width: fit-content;

@@ -173,6 +173,10 @@
         opacity: 0;
         transition: $main-transition;
         transform: skewX(-7deg);
+        
+        #{$ltr} & {
+          transform: skewX(7deg);
+        }
       }
 
       &.active,

@@ -773,7 +773,7 @@
   }
 
   &.sm {
-    min-width: 120px;
+    min-width: 80px;
     font-size: 14px;
     height: 44px;
   }
@@ -2388,7 +2388,7 @@
   transition: all 0.6s cubic-bezier(0.68, -0.3, 0.265, 2.1);
   box-shadow: $main-shadow;
   padding: 10px 8px;
-  border-radius: 15px;
+  border-radius: 0;
   min-width: 220px;
   #{$ltr} & {
     inset: 50px auto auto 0%;
@@ -2403,10 +2403,10 @@
     opacity: 1;
     pointer-events: auto;
     #{$ltr} & {
-      inset: 28px auto auto 0% !important;
+      inset: 50px auto auto 0% !important;
     }
     #{$rtl} & {
-      inset: 28px 0% auto auto !important;
+      inset: 50px 0% auto auto !important;
     }
     transform: translate3d(0px, 0px, 0px) !important;
   }
@@ -2414,18 +2414,18 @@
   &.left {
     // min-width: 180px;
     #{$ltr} & {
-      inset: 50px 0% auto auto;
+      inset: 65px 0% auto auto;
     }
     #{$rtl} & {
-      inset: 50px auto auto 0%;
+      inset: 65px auto auto 0%;
     }
 
     &.show {
       #{$ltr} & {
-        inset: 28px 0% auto auto !important;
+        inset: 50px 0% auto auto !important;
       }
       #{$rtl} & {
-        inset: 28px auto auto 0% !important;
+        inset: 50px auto auto 0% !important;
       }
     }
   }
@@ -2439,11 +2439,11 @@
       font-size: 16px;
       color: $black;
       transition: $main-transition;
-      border-radius: 5px;
+      border-radius: 0;
 
       &:hover {
-        color: $dark;
-        background-color: $white3;
+        color: $main;
+        background-color: #fef4f0;
       }
     }
   }
@@ -2483,7 +2483,7 @@
 }
 
 .dropdown-toggle {
-  background-color: transparent;
+  // background-color: transparent;
   display: flex;
   align-items: center;
   gap: 5px;
