@@ -794,12 +794,22 @@ html[lang=ar] .steps .step-item + .step-item:after {
   align-items: center;
   gap: 8px;
 }
+@media screen and (max-width: 425px) {
+  .breadcrumb-con {
+    gap: 5px;
+  }
+}
 .breadcrumb-con .breadcrumb-m {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   font-size: 17px;
   color: #fff;
+}
+@media screen and (max-width: 425px) {
+  .breadcrumb-con .breadcrumb-m {
+    font-size: 15px;
+  }
 }
 .breadcrumb-con .breadcrumb-m i {
   font-size: 15px;
@@ -2908,13 +2918,13 @@ html[lang=ar] .pagination .page-item:last-child .page-link {
   justify-content: space-between;
 }
 .page-header .header-content .logo-link .logo {
-  max-width: 235px;
+  max-width: 155px;
   max-height: 70px;
   object-fit: contain;
 }
 @media screen and (max-width: 576px) {
   .page-header .header-content .logo-link .logo {
-    max-width: 155px;
+    max-height: 54px;
   }
 }
 
@@ -3951,6 +3961,8 @@ html[lang=ar] .team-card .team-content::before {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 12px;
 }
 @media screen and (max-width: 425px) {
   .page-top .page-info {
@@ -3964,7 +3976,7 @@ html[lang=ar] .team-card .team-content::before {
 }
 @media screen and (max-width: 425px) {
   .page-top .page-info .page-head {
-    font-size: 22px;
+    font-size: 18px;
   }
 }
 
@@ -4147,5 +4159,169 @@ html[lang=ar] .gallary .gallary-item .fancybox-img {
 }
 
 /********************* End Contact section *********************/
+/********************* Start service-detailes section *********************/
+.service-detailes .content {
+  display: flex;
+  gap: 60px;
+}
+@media screen and (max-width: 992px) {
+  .service-detailes .content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.service-detailes .content .deatiles-slider {
+  width: 380px;
+  position: relative;
+  flex-shrink: 0;
+}
+@media screen and (max-width: 425px) {
+  .service-detailes .content .deatiles-slider {
+    width: 320px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .service-detailes .content .deatiles-slider {
+    width: 270px;
+  }
+}
+.service-detailes .content .deatiles-slider::after {
+  position: absolute;
+  content: "";
+  z-index: 5;
+  top: -20px;
+  transition: all 0.3s ease;
+  width: 100%;
+  height: 100%;
+  border: 3px solid #ef3a00;
+  pointer-events: none;
+}
+html[lang=en] .service-detailes .content .deatiles-slider::after {
+  left: 20px;
+}
+html[lang=ar] .service-detailes .content .deatiles-slider::after {
+  right: 20px;
+}
+.service-detailes .content .deatiles-slider .item {
+  position: relative;
+}
+.service-detailes .content .deatiles-slider .item .img {
+  height: 320px;
+  width: 100%;
+  object-fit: cover;
+}
+@media screen and (max-width: 375px) {
+  .service-detailes .content .deatiles-slider .item .img {
+    height: 280px;
+  }
+}
+.service-detailes .content .deatiles-slider .item .fancybox-img {
+  background-color: #fff;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ef3a00;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  top: 15px;
+  z-index: 6;
+}
+html[lang=en] .service-detailes .content .deatiles-slider .item .fancybox-img {
+  right: 15px;
+}
+html[lang=ar] .service-detailes .content .deatiles-slider .item .fancybox-img {
+  left: 15px;
+}
+
+/********************* End service-detailes section *********************/
+/********************* Start previous-card section *********************/
+.previous-card {
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+@media screen and (max-width: 425px) {
+  .previous-card {
+    height: 360px;
+  }
+}
+.previous-card::after {
+  position: absolute;
+  content: "";
+  z-index: 2;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translateY(100%);
+}
+.previous-card .previous-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.previous-card .previous-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: #ef3a00;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  z-index: 4;
+  transform: translateY(100%);
+  transition: all 0.3s ease;
+}
+.previous-card .previous-content .left .title {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+.previous-card .previous-content .left .desc {
+  font-size: 16px;
+  color: #fff;
+}
+.previous-card .previous-content .previous-link {
+  color: #fff;
+  font-size: 16px;
+  padding: 12px 0;
+}
+html[lang=en] .previous-card .previous-content .previous-link {
+  padding-left: 20px;
+}
+html[lang=ar] .previous-card .previous-content .previous-link {
+  padding-right: 20px;
+}
+html[lang=en] .previous-card .previous-content .previous-link {
+  border-left: 1px solid #fff;
+}
+html[lang=ar] .previous-card .previous-content .previous-link {
+  border-right: 1px solid #fff;
+}
+.previous-card:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+.previous-card:hover .previous-content {
+  transform: translateY(0);
+}
+
+.previous-works-cards .owl-nav {
+  top: -50px;
+  bottom: unset;
+}
+
+/********************* End previous-card section *********************/
 
 /*# sourceMappingURL=main.css.map */

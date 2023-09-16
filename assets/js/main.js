@@ -116,12 +116,16 @@ $(document).ready(function () {
   owl.on("changed.owl.carousel", function (event) {
     setTimeout(() => {
       owl.find(".owl-stage-outer").addClass("py-3");
-      const allItems = owl.find('.owl-item');
+      const allItems = owl.find(".owl-item");
       let num = 1;
-      allItems.each(function(){
-        $(this).find('.services-card .service-icon').html(`<i class="fa-solid fa-screwdriver-wrench"></i>`)
-        num++;
-      })
+      allItems.each(function () {
+        if ($(this).find(".services-card .service-icon")) {
+          $(this)
+            .find(".services-card .service-icon")
+            .html(`<i class="fa-solid fa-screwdriver-wrench"></i>`);
+          num++;
+        }
+      });
     }, 0.1);
   });
 
@@ -182,5 +186,20 @@ $(document).ready(function () {
         margin: 20,
       },
     },
+  });
+
+  /************ deatiles Carousel ***********/
+  $(".deatiles-slider").owlCarousel({
+    items: 1,
+    rtl: isRtl,
+    autoplaySpeed: 3000,
+    autoplayTimeout: 5000,
+    smartSpeed: 2000,
+    autoplayHoverPause: false,
+    margin: 10,
+    loop: true,
+    dots: false,
+    nav: false,
+    autoplay: true,
   });
 });

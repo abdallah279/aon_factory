@@ -533,12 +533,20 @@
   gap: 8px;
   // margin-bottom: 25px;
 
+  @media screen and (max-width: $screen-xs) {
+    gap: 5px;
+  }
+
   .breadcrumb-m {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     font-size: 17px;
     color: $white;
+
+    @media screen and (max-width: $screen-xs) {
+      font-size: 15px;
+    }
 
     i {
       font-size: 15px;

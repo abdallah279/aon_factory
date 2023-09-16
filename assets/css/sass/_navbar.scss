@@ -14,12 +14,12 @@
 
     .logo-link {
       .logo {
-        max-width: 235px;
+        max-width: 155px;
         max-height: 70px;
         object-fit: contain;
 
         @media screen and (max-width: $screen-sm) {
-          max-width: 155px;
+          max-height: 54px;
         }
       }
     }

@@ -671,6 +671,8 @@
   .page-info {
     padding: 220px 0 50px;
     @include between;
+    flex-wrap: wrap;
+    row-gap: 12px;
 
     @media screen and (max-width: $screen-xs) {
       padding-top: 185px;
@@ -682,7 +684,7 @@
       color: $white;
 
       @media screen and (max-width: $screen-xs) {
-        font-size: 22px;
+        font-size: 18px;
       }
     }
   }
@@ -860,4 +862,173 @@
     }
   }
 }
+
 /********************* End Contact section *********************/
+
+/********************* Start service-detailes section *********************/
+.service-detailes {
+  .content {
+    display: flex;
+    gap: 60px;
+
+    @media screen and (max-width: $screen-lg) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .deatiles-slider {
+      width: 380px;
+      position: relative;
+      flex-shrink: 0;
+
+      @media screen and (max-width: $screen-xs) {
+        width: 320px;
+      }
+
+      @media screen and (max-width: $screen-xxs) {
+        width: 270px;
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+        z-index: 5;
+        top: -20px;
+        @include dir-left(20px);
+        transition: $main-transition;
+        width: 100%;
+        height: 100%;
+        border: 3px solid $main;
+        pointer-events: none;
+      }
+
+      .item {
+        position: relative;
+        .img {
+          height: 320px;
+          width: 100%;
+          object-fit: cover;
+
+          @media screen and (max-width: $screen-xxs) {
+            height: 280px;
+          }
+        }
+
+        // &::after {
+        //   position: absolute;
+        //   content: "";
+        //   z-index: 2;
+        //   top: 0;
+        //   left: 0;
+        //   transition: $main-transition;
+        //   width: 100%;
+        //   height: 100%;
+        //   background-color: rgba($color: #000000, $alpha: 0.3);
+        // }
+
+        .fancybox-img {
+          background-color: $white;
+          width: 42px;
+          height: 42px;
+          @include center;
+          color: $main;
+          font-size: 15px;
+          cursor: pointer;
+          transition: all 0.5s ease-in-out;
+          position: absolute;
+          top: 15px;
+          @include dir-right(15px);
+          z-index: 6;
+        }
+      }
+    }
+  }
+}
+
+/********************* End service-detailes section *********************/
+
+/********************* Start previous-card section *********************/
+.previous-card {
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+
+  @media screen and (max-width: $screen-xs) {
+    height: 360px;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    z-index: 2;
+    top: 0;
+    left: 0;
+    transition: $main-transition;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  .previous-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .previous-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: $main;
+    @include between;
+    gap: 25px;
+    z-index: 4;
+    transform: translateY(100%);
+    transition: $main-transition;
+
+    .left {
+      .title {
+        color: $white;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 7px;
+      }
+
+      .desc {
+        font-size: 16px;
+        color: $white;
+      }
+    }
+
+    .previous-link {
+      color: $white;
+      font-size: 16px;
+      padding: 12px 0;
+      @include dir-padding-left(20px);
+      @include dir-border-left(1px solid $white);
+    }
+  }
+
+  &:hover{
+    &::after{
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .previous-content{
+      transform: translateY(0);
+    }
+  }
+}
+
+.previous-works-cards{
+  .owl-nav {
+    top: -50px;
+    bottom: unset;
+  }
+}
+/********************* End previous-card section *********************/
