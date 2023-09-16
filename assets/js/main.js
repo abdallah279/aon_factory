@@ -116,6 +116,12 @@ $(document).ready(function () {
   owl.on("changed.owl.carousel", function (event) {
     setTimeout(() => {
       owl.find(".owl-stage-outer").addClass("py-3");
+      const allItems = owl.find('.owl-item');
+      let num = 1;
+      allItems.each(function(){
+        $(this).find('.services-card .service-icon').html(`<i class="fa-solid fa-screwdriver-wrench"></i>`)
+        num++;
+      })
     }, 0.1);
   });
 

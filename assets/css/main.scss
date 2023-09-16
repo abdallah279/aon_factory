@@ -295,7 +295,7 @@
     .service-icon {
       position: absolute;
       top: -35px;
-      font-size: 34px;
+      font-size: 24px;
       background-color: $white;
       color: $main;
       width: 70px;
@@ -303,6 +303,9 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke-width: 1.2px;
+      -webkit-text-stroke-color: $main;
       transition: all 0.31s ease-in-out;
 
       &::after {
@@ -383,6 +386,7 @@
       .service-icon {
         background-color: $main;
         color: $white;
+        -webkit-text-stroke-color: $white;
 
         &::after {
           background-color: $white;
@@ -403,6 +407,16 @@
 }
 
 .services-slider {
+  .owl-item {
+    .services-card {
+      .service-icon {
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+
   .owl-nav {
     position: absolute;
     bottom: -38px;
@@ -435,7 +449,7 @@
 /********************* Start team-card section *********************/
 .team-card {
   position: relative;
-  height: 380px;
+  height: 340px;
 
   &::before {
     position: absolute;

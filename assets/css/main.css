@@ -3164,6 +3164,13 @@ html[lang=ar] .footer-title:after {
   right: 0;
 }
 
+.widget_about .logo {
+  max-height: 80px;
+  display: block;
+  margin-bottom: 18px;
+  border-radius: 5px;
+}
+
 .widget_about p {
   margin-bottom: 20px;
   width: calc(100% - 60px);
@@ -3587,7 +3594,7 @@ html[lang=ar] .about-content .about-img::after {
 .services-card .service-content .service-icon {
   position: absolute;
   top: -35px;
-  font-size: 34px;
+  font-size: 24px;
   background-color: #fff;
   color: #ef3a00;
   width: 70px;
@@ -3595,6 +3602,9 @@ html[lang=ar] .about-content .about-img::after {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1.2px;
+  -webkit-text-stroke-color: #ef3a00;
   transition: all 0.31s ease-in-out;
 }
 .services-card .service-content .service-icon::after {
@@ -3669,6 +3679,7 @@ html[lang=ar] .services-card .service-content svg {
 .services-card:hover .service-content .service-icon {
   background-color: #ef3a00;
   color: #fff;
+  -webkit-text-stroke-color: #fff;
 }
 .services-card:hover .service-content .service-icon::after {
   background-color: #fff;
@@ -3682,6 +3693,9 @@ html[lang=ar] .services-card .service-content svg {
   transform: translateY(0);
 }
 
+.services-slider .owl-item .services-card .service-icon::before {
+  display: none;
+}
 .services-slider .owl-nav {
   position: absolute;
   bottom: -38px;
@@ -3718,7 +3732,7 @@ html[lang=ar] .services-slider .owl-nav {
 /********************* Start team-card section *********************/
 .team-card {
   position: relative;
-  height: 380px;
+  height: 340px;
 }
 .team-card::before {
   position: absolute;
