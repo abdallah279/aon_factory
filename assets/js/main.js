@@ -199,7 +199,11 @@ $(document).ready(function () {
     margin: 10,
     loop: true,
     dots: false,
-    nav: false,
+    nav: true,
     autoplay: true,
+    navText: [
+      `<i class="fa-solid fa-arrow-right-long"></i>`,
+      `<i class="fa-solid fa-arrow-left-long"></i>`,
+    ],
   });
 });

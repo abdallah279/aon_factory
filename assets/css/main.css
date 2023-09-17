@@ -4045,6 +4045,11 @@ html[lang=en] .gallary .gallary-item .fancybox-img {
 html[lang=ar] .gallary .gallary-item .fancybox-img {
   right: 15px;
 }
+.gallary .gallary-item .fancybox-img:hover {
+  background-color: #ef3a00;
+  color: #fff;
+  border-color: #ef3a00;
+}
 .gallary .gallary-item .gallary-img {
   width: 100%;
   height: 100%;
@@ -4174,8 +4179,9 @@ html[lang=ar] .gallary .gallary-item .fancybox-img {
 }
 @media screen and (max-width: 992px) {
   .service-detailes .content {
-    flex-direction: column;
+    flex-direction: column !important;
     align-items: center;
+    gap: 100px;
   }
 }
 .service-detailes .content .deatiles-slider {
@@ -4193,11 +4199,28 @@ html[lang=ar] .gallary .gallary-item .fancybox-img {
     width: 270px;
   }
 }
+.service-detailes .content .deatiles-slider::before {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  top: 15px;
+  transition: all 0.3s ease;
+  width: 100%;
+  height: 100%;
+  border: 3px solid #ef3a00;
+  pointer-events: none;
+}
+html[lang=en] .service-detailes .content .deatiles-slider::before {
+  right: 15px;
+}
+html[lang=ar] .service-detailes .content .deatiles-slider::before {
+  left: 15px;
+}
 .service-detailes .content .deatiles-slider::after {
   position: absolute;
   content: "";
-  z-index: 5;
-  top: -20px;
+  z-index: -1;
+  top: -15px;
   transition: all 0.3s ease;
   width: 100%;
   height: 100%;
@@ -4205,10 +4228,10 @@ html[lang=ar] .gallary .gallary-item .fancybox-img {
   pointer-events: none;
 }
 html[lang=en] .service-detailes .content .deatiles-slider::after {
-  left: 20px;
+  left: 15px;
 }
 html[lang=ar] .service-detailes .content .deatiles-slider::after {
-  right: 20px;
+  right: 15px;
 }
 .service-detailes .content .deatiles-slider .item {
   position: relative;
@@ -4222,6 +4245,17 @@ html[lang=ar] .service-detailes .content .deatiles-slider::after {
   .service-detailes .content .deatiles-slider .item .img {
     height: 280px;
   }
+}
+.service-detailes .content .deatiles-slider .item::after {
+  position: absolute;
+  content: "";
+  z-index: 2;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 .service-detailes .content .deatiles-slider .item .fancybox-img {
   background-color: #fff;
@@ -4243,6 +4277,74 @@ html[lang=en] .service-detailes .content .deatiles-slider .item .fancybox-img {
 }
 html[lang=ar] .service-detailes .content .deatiles-slider .item .fancybox-img {
   left: 15px;
+}
+.service-detailes .content .deatiles-slider .owl-nav {
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 7px;
+}
+.service-detailes .content .deatiles-slider .owl-nav .owl-next,
+.service-detailes .content .deatiles-slider .owl-nav .owl-prev {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ef3a00 !important;
+  background-color: #fff !important;
+  color: #ef3a00 !important;
+  font-size: 15px !important;
+  transition: all 0.3s ease;
+}
+.service-detailes .content .deatiles-slider .owl-nav .owl-next:hover,
+.service-detailes .content .deatiles-slider .owl-nav .owl-prev:hover {
+  background-color: #ef3a00 !important;
+  color: #fff !important;
+}
+.service-detailes.previous-item .content {
+  flex-direction: row-reverse;
+}
+@media screen and (max-width: 992px) {
+  .service-detailes.previous-item .content {
+    gap: 40px;
+  }
+}
+.service-detailes.previous-item .content .deatiles-slider {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid #ef3a00;
+  padding: 10px;
+  background-color: #fff;
+}
+.service-detailes.previous-item .content .deatiles-slider .owl-nav {
+  display: none !important;
+}
+.service-detailes.previous-item .content .deatiles-slider::after, .service-detailes.previous-item .content .deatiles-slider::before {
+  display: none;
+}
+.service-detailes.previous-item .content .deatiles-slider .item .fancybox-img {
+  background-color: #ef3a00;
+  color: #fff;
+  border-radius: 50%;
+  bottom: 15px;
+  top: unset;
+}
+html[lang=en] .service-detailes.previous-item .content .deatiles-slider .item .fancybox-img {
+  left: 15px !important;
+}
+html[lang=ar] .service-detailes.previous-item .content .deatiles-slider .item .fancybox-img {
+  right: 15px !important;
+}
+html[lang=en] .service-detailes.previous-item .content .deatiles-slider .item .fancybox-img {
+  right: unset !important;
+}
+html[lang=ar] .service-detailes.previous-item .content .deatiles-slider .item .fancybox-img {
+  left: unset !important;
+}
+.service-detailes.previous-item .content .service-det {
+  width: 100%;
 }
 
 /********************* End service-detailes section *********************/

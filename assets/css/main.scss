@@ -737,6 +737,12 @@
       @include dir-left(15px);
       z-index: 3;
       opacity: 0;
+
+      &:hover {
+        background-color: $main;
+        color: $white;
+        border-color: $main;
+      }
     }
 
     .gallary-img {
@@ -872,8 +878,9 @@
     gap: 60px;
 
     @media screen and (max-width: $screen-lg) {
-      flex-direction: column;
+      flex-direction: column !important;
       align-items: center;
+      gap: 100px;
     }
 
     .deatiles-slider {
@@ -889,12 +896,25 @@
         width: 270px;
       }
 
+      &::before {
+        position: absolute;
+        content: "";
+        z-index: -1;
+        top: 15px;
+        @include dir-right(15px);
+        transition: $main-transition;
+        width: 100%;
+        height: 100%;
+        border: 3px solid $main;
+        pointer-events: none;
+      }
+
       &::after {
         position: absolute;
         content: "";
-        z-index: 5;
-        top: -20px;
-        @include dir-left(20px);
+        z-index: -1;
+        top: -15px;
+        @include dir-left(15px);
         transition: $main-transition;
         width: 100%;
         height: 100%;
@@ -914,17 +934,17 @@
           }
         }
 
-        // &::after {
-        //   position: absolute;
-        //   content: "";
-        //   z-index: 2;
-        //   top: 0;
-        //   left: 0;
-        //   transition: $main-transition;
-        //   width: 100%;
-        //   height: 100%;
-        //   background-color: rgba($color: #000000, $alpha: 0.3);
-        // }
+        &::after {
+          position: absolute;
+          content: "";
+          z-index: 2;
+          top: 0;
+          left: 0;
+          transition: $main-transition;
+          width: 100%;
+          height: 100%;
+          background-color: rgba($color: #000000, $alpha: 0.3);
+        }
 
         .fancybox-img {
           background-color: $white;
@@ -940,6 +960,71 @@
           @include dir-right(15px);
           z-index: 6;
         }
+      }
+
+      .owl-nav {
+        position: absolute;
+        bottom: -80px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 7px;
+        .owl-next,
+        .owl-prev {
+          width: 40px;
+          height: 40px;
+          @include center;
+          border: 1px solid $main !important;
+          background-color: $white !important;
+          color: $main !important;
+          font-size: 15px !important;
+          transition: $main-transition;
+
+          &:hover {
+            background-color: $main !important;
+            color: $white !important;
+          }
+        }
+      }
+    }
+  }
+
+  &.previous-item {
+    .content {
+      flex-direction: row-reverse;
+
+      @media screen and (max-width: $screen-lg) {
+        gap: 40px;
+      }
+
+      .deatiles-slider {
+        .owl-nav{
+          display: none !important;
+        }
+        &::after,
+        &::before {
+          display: none;
+        }
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+        border: 1px solid $main;
+        padding: 10px;
+        background-color: $white;
+
+        .item {
+          .fancybox-img {
+            background-color: $main;
+            color: $white;
+            border-radius: 50%;
+            bottom: 15px;
+            top: unset;
+            @include dir-left(15px !important);
+            @include dir-right(unset !important);
+          }
+        }
+      }
+
+      .service-det {
+        width: 100%;
       }
     }
   }
@@ -1013,19 +1098,19 @@
     }
   }
 
-  &:hover{
-    &::after{
+  &:hover {
+    &::after {
       opacity: 1;
       transform: translateY(0);
     }
 
-    .previous-content{
+    .previous-content {
       transform: translateY(0);
     }
   }
 }
 
-.previous-works-cards{
+.previous-works-cards {
   .owl-nav {
     top: -50px;
     bottom: unset;
