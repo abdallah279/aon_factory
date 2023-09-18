@@ -772,6 +772,11 @@
     }
   }
 
+  &.sec{
+    background-color: $sec;
+    color: $white;
+    border-color: $sec;
+  }
   &.sm {
     min-width: 80px;
     font-size: 14px;

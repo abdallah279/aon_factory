@@ -101,7 +101,7 @@
       }
 
       &.active {
-        background-color: rgba($color: $main, $alpha: 0.3);
+        background-color: rgba($color: $sec, $alpha: 0.6);
       }
     }
   }
@@ -205,7 +205,7 @@
     }
 
     .text {
-      color: $sec;
+      color: #101010;
       font-size: 16px;
       line-height: 1.8;
       margin-bottom: 18px;
@@ -384,7 +384,7 @@
       margin-bottom: -65px;
 
       .service-icon {
-        background-color: $main;
+        background-color: $sec;
         color: $white;
         -webkit-text-stroke-color: $white;
 
@@ -475,6 +475,7 @@
     border: none;
     top: 5px;
     @include dir-left(5px);
+    transition: $main-transition;
 
     &::before {
       position: absolute;
@@ -483,6 +484,7 @@
       height: 2px;
       width: 26px;
       background-color: $main;
+      transition: $main-transition;
     }
   }
 
@@ -532,6 +534,12 @@
   }
 
   &:hover {
+    .team-icon{
+      color: $sec;
+      &::before{
+        background-color: $sec;
+      }
+    }
     .team-content {
       .name,
       .jop {
@@ -999,7 +1007,9 @@
 
       .deatiles-slider {
         .owl-nav{
-          display: none !important;
+          // display: none !important;
+          top: -17px;
+          bottom: unset;
         }
         &::after,
         &::before {
