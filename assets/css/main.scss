@@ -1127,3 +1127,111 @@
   }
 }
 /********************* End previous-card section *********************/
+
+/********************* Start services-card section *********************/
+.our_vision_card {
+  text-align: center;
+  // overflow: hidden;
+  padding: 20px;
+  position: relative;
+  box-shadow: $main-shadow;
+  
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 3px;
+    background-color: #ffe7dd;
+    z-index: 2;
+    transition: $main-transition;
+  }
+  
+  &::before{
+    top: 0;
+    right: 0;
+  }
+  
+  &::after {
+    bottom: 0;
+    left: 0;
+  }
+
+  .our_vision_icon {
+    position: relative;
+    font-size: 24px;
+    background-color: #fef4f0;
+    color: $main;
+    width: 70px;
+    height: 70px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1.2px;
+    -webkit-text-stroke-color: $main;
+    transition: all 0.31s ease-in-out;
+    margin-bottom: 18px;
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      height: 3px;
+      width: 28px;
+      background-color: $main;
+      transition: all 0.31s ease-in-out;
+    }
+  }
+
+  .our_vision_name {
+    color: #101010;
+    font-size: 18px;
+    margin-bottom: 18px;
+    line-height: 1.4;
+    font-weight: 600;
+  }
+
+  .desc {
+    font-size: 15px;
+    color: #101010;
+  }
+  
+  .our_vision_list{
+    list-style: inside;
+    text-align: start;
+    .list_item{
+      font-size: 15px;
+      color: #101010;
+      margin-bottom: 16px;
+      line-height: 1.7;
+
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &:hover {
+    .our_vision_icon {
+      background-color: $main;
+      color: $white;
+      -webkit-text-stroke-color: $white;
+
+      &::after {
+        background-color: $white;
+      }
+
+      &::before {
+        -webkit-text-stroke-color: $white;
+      }
+    }
+
+    &::before, &::after{
+      width: 100%;
+      // background-color: $main;
+    }
+
+  }
+}
+
+/********************* End services-card section *********************/

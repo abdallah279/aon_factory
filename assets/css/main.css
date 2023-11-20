@@ -4448,5 +4448,94 @@ html[lang=ar] .previous-card .previous-content .previous-link {
 }
 
 /********************* End previous-card section *********************/
+/********************* Start services-card section *********************/
+.our_vision_card {
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 0 5px 0 rgba(32, 32, 32, 0.1);
+}
+.our_vision_card::before, .our_vision_card::after {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 3px;
+  background-color: #ffe7dd;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+.our_vision_card::before {
+  top: 0;
+  right: 0;
+}
+.our_vision_card::after {
+  bottom: 0;
+  left: 0;
+}
+.our_vision_card .our_vision_icon {
+  position: relative;
+  font-size: 24px;
+  background-color: #fef4f0;
+  color: #f04a2f;
+  width: 70px;
+  height: 70px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1.2px;
+  -webkit-text-stroke-color: #f04a2f;
+  transition: all 0.31s ease-in-out;
+  margin-bottom: 18px;
+}
+.our_vision_card .our_vision_icon::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  height: 3px;
+  width: 28px;
+  background-color: #f04a2f;
+  transition: all 0.31s ease-in-out;
+}
+.our_vision_card .our_vision_name {
+  color: #101010;
+  font-size: 18px;
+  margin-bottom: 18px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+.our_vision_card .desc {
+  font-size: 15px;
+  color: #101010;
+}
+.our_vision_card .our_vision_list {
+  list-style: inside;
+  text-align: start;
+}
+.our_vision_card .our_vision_list .list_item {
+  font-size: 15px;
+  color: #101010;
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+.our_vision_card .our_vision_list .list_item:last-child {
+  margin-bottom: 0;
+}
+.our_vision_card:hover .our_vision_icon {
+  background-color: #f04a2f;
+  color: #fff;
+  -webkit-text-stroke-color: #fff;
+}
+.our_vision_card:hover .our_vision_icon::after {
+  background-color: #fff;
+}
+.our_vision_card:hover .our_vision_icon::before {
+  -webkit-text-stroke-color: #fff;
+}
+.our_vision_card:hover::before, .our_vision_card:hover::after {
+  width: 100%;
+}
+
+/********************* End services-card section *********************/
 
 /*# sourceMappingURL=main.css.map */
